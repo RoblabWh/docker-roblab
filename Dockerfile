@@ -77,7 +77,8 @@ RUN apt-get update && apt-get upgrade -y \
 		bash \
 		iputils-ping \
 		iproute2 \
-		net-tools
+		net-tools \
+		emacs
 
 #**************************************************Baxter******************************************************************
 
