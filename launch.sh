@@ -7,7 +7,7 @@ if [ ! -e robotic_ws ]
 then
 	mkdir robotic_ws
 fi
-xhost + local:
+xhost +local:
 QT_GRAPHICSSYSTEM="native" docker run -it --rm \
 	--name roblabuser \
     	--privileged \
