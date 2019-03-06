@@ -1,8 +1,9 @@
-FROM osrf/ros:kinetic-desktop-full
+FROM ros:kinetic
 
 RUN apt-get update && apt-get upgrade -y && \
 	apt-get install -y \
-		software-properties-common 
+		software-properties-common \
+		curl
 
 #Gosu
 RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4
@@ -63,10 +64,10 @@ RUN apt-get update && apt-get install -y \
 
 
 #Install Rviz with QT5
-ADD extrafiles/rviz_ws.tar /tmp
-RUN mv /bin/sh /bin/shx && ln -s /bin/bash /bin/sh
-RUN source /opt/ros/kinetic/setup.bash && source /opt/qt57/bin/qt57-env.sh && cd /tmp/rviz_ws && catkin_make -DCMAKE_INSTALL_PREFIX=/opt/ros/kinetic install
-RUN rm -r /tmp/rviz_ws && rm /bin/sh && mv /bin/shx /bin/sh
+#ADD extrafiles/rviz_ws.tar /tmp
+#RUN mv /bin/sh /bin/shx && ln -s /bin/bash /bin/sh
+#RUN source /opt/ros/kinetic/setup.bash && source /opt/qt57/bin/qt57-env.sh && cd /tmp/rviz_ws && catkin_make -DCMAKE_INSTALL_PREFIX=/opt/ros/kinetic install
+#RUN rm -r /tmp/rviz_ws && rm /bin/sh && mv /bin/shx /bin/sh
 
 #Install other programms
 RUN apt-get update && apt-get upgrade -y \
