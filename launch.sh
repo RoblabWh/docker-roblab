@@ -16,10 +16,10 @@ QT_GRAPHICSSYSTEM="native" docker run -it --rm \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-v /etc/machine-id:/etc/machine-id \
 	-v /home/$USER/docker/rob_env/robotic_ws:/home/user \
+	-v /home/$USER/.config:/home/user/.config \
 	--network="host" \
-	roblab/environment \
+	roblabfhge/environment:latest \
 	bash
 
 xhost -local:
 
-#wat
