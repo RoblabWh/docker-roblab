@@ -91,6 +91,9 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lc='ls -lt | less'
+alias psg='ps -auxwww | grep -i'
+alias hg='history | grep -i '
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
